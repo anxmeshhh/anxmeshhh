@@ -4,7 +4,7 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=20&duration=3000&pause=900&color=A78BFA&center=true&vCenter=true&width=720&lines=Currently+building+Verdict+%E2%80%94+an+AI+code+verifier;Shipping+agentic+systems+that+don't+just+talk%2C+they+act;Full-stack%2C+backend-first%2C+always;71%2B+repositories%2C+one+obsession%3A+does+it+actually+work%3F" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=20&duration=3000&pause=900&color=A78BFA&center=true&vCenter=true&width=720&lines=Currently+building+Verdict+%E2%80%94+an+AI+code+verifier;Shipping+agentic+systems+that+don't+just+talk%2C+they+act;Full-stack%2C+backend-first%2C+always;91%2B+repositories%2C+one+obsession%3A+does+it+actually+work%3F" alt="Typing SVG" />
 
 <br/><br/>
 
