@@ -10,7 +10,7 @@
 
 <img src="https://komarev.com/ghpvc/?username=anxmeshhh&label=PROFILE+VIEWS&color=6366F1&style=flat-square&labelColor=0A0E1A" alt="profile views" />
 <img src="https://img.shields.io/github/followers/anxmeshhh?label=FOLLOWERS&style=flat-square&color=8B5CF6&labelColor=0A0E1A" alt="followers" />
-<img src="https://img.shields.io/badge/REPOSITORIES-71%2B-3B82F6?style=flat-square&labelColor=0A0E1A" alt="repos" />
+<img src="https://img.shields.io/badge/REPOSITORIES-91%2B-3B82F6?style=flat-square&labelColor=0A0E1A" alt="repos" />
 
 </div>
 
