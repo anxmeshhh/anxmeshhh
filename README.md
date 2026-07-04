@@ -167,7 +167,7 @@ Real-time, room-based music sync — zero-proxy streaming architecture and lock-
 <table>
 <tr>
 <td width="50%">
-<img width="100%" src="https://github-readme-stats.vercel.app/api?username=anxmeshhh&show_icons=true&title_color=A78BFA&icon_color=8B5CF6&text_color=c9d1d9&bg_color=0A0E1A&border_color=6366F1&count_private=true" alt="stats" />
+<img width="100%" src="./assets/stats.svg" alt="stats" />
 </td>
 <td width="50%">
 <img width="100%" src="https://streak-stats.demolab.com/?user=anxmeshhh&stroke=6366F1&background=0A0E1A&ring=8B5CF6&fire=22D3EE&currStreakLabel=c9d1d9&sideLabels=c9d1d9&currStreakNum=e6edf3&sideNums=e6edf3&dates=8b949e&border=6366F1" alt="streak" />
@@ -175,7 +175,7 @@ Real-time, room-based music sync — zero-proxy streaming architecture and lock-
 </tr>
 </table>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anxmeshhh&layout=compact&title_color=A78BFA&icon_color=8B5CF6&text_color=c9d1d9&bg_color=0A0E1A&border_color=6366F1" alt="top languages" />
+<img src="./assets/top-langs.svg" alt="top languages" />
 
 <br/>
 
