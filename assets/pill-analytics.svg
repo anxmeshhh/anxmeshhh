@@ -1,0 +1,15 @@
+<svg width="310" height="44" viewBox="0 0 310 44" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="45%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <style>
+      text{ font: 700 15px 'Segoe UI', -apple-system, Helvetica, Arial, sans-serif; letter-spacing: 2px; fill: #E7E9F7; }
+    </style>
+  </defs>
+  <rect x="1" y="1" width="308" height="42" rx="21" fill="#12162A" stroke="url(#b)" stroke-width="1.4"/>
+  <circle cx="24" cy="22" r="4" fill="#22D3EE"/>
+  <text x="38" y="27">GITHUB ANALYTICS</text>
+</svg>
