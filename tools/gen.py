@@ -268,7 +268,20 @@ def chapter(fname, num, title, sub):
 # ══════════════════════════════════════════════════════════════════════════
 # 3. WANTED POSTER
 # ══════════════════════════════════════════════════════════════════════════
-def wanted():
+BUST = '''<g fill="#2A1208">
+<path d="M122,365 Q130,318 186,304 L254,304 Q310,318 318,365Z"/>
+<rect x="208" y="276" width="24" height="32"/>
+<ellipse cx="220" cy="266" rx="27" ry="33"/>
+<path d="M146,240 C178,224 262,224 294,240 C262,250 178,250 146,240Z"/>
+<path d="M186,239 L191,200 Q205,191 220,198 Q235,191 249,200 L254,239Z"/>
+</g>
+<path d="M194,272 Q220,280 246,272 L246,280 Q232,300 220,306 Q208,300 194,280Z" fill="#9E1016"/>
+<rect x="187" y="232" width="66" height="6" fill="#9E1016" opacity=".85"/>'''
+
+
+def wanted(portrait=None):
+    bust = (f'<image href="{portrait}" x="111" y="179" width="218" height="186" preserveAspectRatio="xMidYMid slice" opacity=".92" style="mix-blend-mode:multiply"/>'
+            if portrait else BUST)
     W, H = 440, 620
     ink = '#2A1208'; red = '#9E1016'
     rnd = random.Random(21)
@@ -306,15 +319,7 @@ def wanted():
 {T('fell', cx, 156, 'ALIVE · AND SHIPPING TO PRODUCTION', 17, ink, 'middle')}
 <rect x="104" y="172" width="232" height="200" fill="#D9C094" stroke="{ink}" stroke-width="3"/>
 <rect x="111" y="179" width="218" height="186" fill="none" stroke="{ink}" stroke-width="1"/>
-<g fill="{ink}">
-<path d="M122,365 Q130,318 186,304 L254,304 Q310,318 318,365Z"/>
-<rect x="208" y="276" width="24" height="32"/>
-<ellipse cx="220" cy="266" rx="27" ry="33"/>
-<path d="M146,240 C178,224 262,224 294,240 C262,250 178,250 146,240Z"/>
-<path d="M186,239 L191,200 Q205,191 220,198 Q235,191 249,200 L254,239Z"/>
-</g>
-<path d="M194,272 Q220,280 246,272 L246,280 Q232,300 220,306 Q208,300 194,280Z" fill="{red}"/>
-<rect x="187" y="232" width="66" height="6" fill="{red}" opacity=".85"/>
+{bust}
 {T('anton', cx, 420, 'ANIMESH GUPTA', 44, ink, 'middle', 1)}
 {T('type', cx, 443, 'alias "anxmeshhh"', 15, ink, 'middle')}
 {''.join(T('type', cx, 470 + i*19, p, 13.5, ink, 'middle') for i, p in enumerate(para))}
