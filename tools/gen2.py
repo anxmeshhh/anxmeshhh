@@ -244,12 +244,12 @@ def strip():
 
 # ══════════════════════════════════════════════════════════════════════════
 def header(fname, kicker, title, right):
-    W, H = 1200, 76
+    W, H = 1200, 80
     tw_ = fit('anton', title, 30, 700, ls=1.5, where='hdr')
     body = (f'<defs>{GRAIN}</defs><rect width="{W}" height="{H}" rx="10" fill="{INK}"/>{grain_rect(W, H, 10)}'
-            f'{T("anton", 24, 28, kicker, 12, RED, ls=3)}{T("anton", 22, 60, title, 30, BONE, ls=1.5)}'
-            f'<line x1="{40+tw_:.0f}" y1="49" x2="{1176 - tw("anton", right, 13, 2) - 40:.0f}" y2="49" stroke="{BONE}" stroke-opacity=".15"/>'
-            f'{T("anton", 1150, 54, right, 13, RED, "end", 2)}<path d="M1162,44 L1168,49 L1162,54" stroke="{RED}" stroke-width="2" fill="none"/>')
+            f'{T("anton", 24, 29, kicker, 15, RED, ls=3)}{T("anton", 22, 63, title, 32, BONE, ls=1.5)}'
+            f'<line x1="{40+tw_:.0f}" y1="49" x2="{1176 - tw("anton", right, 15, 2) - 40:.0f}" y2="49" stroke="{BONE}" stroke-opacity=".15"/>'
+            f'{T("anton", 1150, 55, right, 15, RED, "end", 2)}<path d="M1162,44 L1168,49 L1162,54" stroke="{RED}" stroke-width="2" fill="none"/>')
     G.svg(fname, W, H, body, '', title, kicker)
 
 
