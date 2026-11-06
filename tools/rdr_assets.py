@@ -255,7 +255,7 @@ def chapter(fname, num, title, sub):
 <rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{MAROON}"/>
 {T('rye', 600, 40, num, 17, RED, 'middle', 5)}
 <g class="t">{T('anton', 600, 93, title, 46, BONE, 'middle', 2)}</g>
-{T('type', 600, 118, sub, 13, DUST, 'middle', 3)}
+{T('type', 600, 119, sub, 14, BONE2, 'middle', 3)}
 <g stroke="{RED}" stroke-width="1.6"><line class="ln" x1="{600-half}" y1="74" x2="110" y2="74"/><line class="ln" x1="{600+half}" y1="74" x2="1090" y2="74"/></g>
 <g stroke="{BLOOD}" stroke-width=".8" opacity=".7"><line class="ln" x1="{600-half}" y1="80" x2="150" y2="80"/><line class="ln" x1="{600+half}" y1="80" x2="1050" y2="80"/></g>
 {diamond(100, 74, 6)}{diamond(1100, 74, 6)}{diamond(600-half+8, 74, 3.5, BONE2)}{diamond(600+half-8, 74, 3.5, BONE2)}'''
@@ -348,7 +348,7 @@ def stats_panel():
     rings = []; css = []
     for i, (v, lab, sub, p) in enumerate(items):
         cx = 110 + i * 196; cy = 168
-        fit('anton', v, 34, 80, where='stat'); fit('fell', lab, 17, 185, where='stat'); fit('type', sub, 12, 185, where='stat')
+        fit('anton', v, 34, 80, where='stat'); fit('fell', lab, 17, 185, where='stat'); fit('type', sub, 14, 185, where='stat')
         css.append(f'.r{i}{{stroke-dasharray:{C:.1f};stroke-dashoffset:{C:.1f};animation:f{i} 1.6s {0.2+i*0.15:.2f}s cubic-bezier(.3,.7,.2,1) forwards}}'
                    f'@keyframes f{i}{{to{{stroke-dashoffset:{C*(1-p):.1f}}}}}')
         rings.append(f'''<g>
@@ -357,7 +357,7 @@ def stats_panel():
 <circle class="r{i}" cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{RED}" stroke-width="9" transform="rotate(-90 {cx} {cy})"/>
 <circle cx="{cx}" cy="{cy}" r="{r-10}" fill="#1A0606" stroke="{BLOOD}" stroke-opacity=".5"/>
 {T('anton', cx, cy + 12, v, 34, BONE, 'middle')}
-{T('fell', cx, 262, lab, 17, BONE, 'middle')}{T('type', cx, 283, sub, 12, DUST, 'middle')}</g>''')
+{T('fell', cx, 262, lab, 17, BONE, 'middle')}{T('type', cx, 285, sub, 14, BONE2, 'middle')}</g>''')
     body = f'''<defs>{GRAIN}<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E0B0B"/><stop offset=".6" stop-color="#170707"/><stop offset="1" stop-color="{INK}"/></linearGradient>
 <radialGradient id="g" cx=".15" cy="0" r=".9"><stop offset="0" stop-color="{BLOOD}" stop-opacity=".35"/><stop offset="1" stop-color="{BLOOD}" stop-opacity="0"/></radialGradient>
 <clipPath id="c"><rect width="{W}" height="{H}" rx="18"/></clipPath></defs>
@@ -366,7 +366,7 @@ def stats_panel():
 {T('anton', 40, 56, 'PLAYER STATISTICS', 28, BONE, ls=2)}
 <rect x="900" y="30" width="260" height="36" rx="18" fill="#1A0606" stroke="{RED}" stroke-width="1.5"/>
 <circle cx="922" cy="48" r="5" fill="{RED}"><animate attributeName="opacity" values="1;.25;1" dur="1.6s" repeatCount="indefinite"/></circle>
-{T('type', 1038, 53, 'HONOR: HIGH  ·  STATUS: SHIPPING', 12.5, BONE2, 'middle')}
+{T('type', 1038, 53, 'HONOR: HIGH  ·  STATUS: SHIPPING', 13.5, BONE2, 'middle')}
 <line x1="40" y1="78" x2="1160" y2="78" stroke="{MAROON2}"/><line x1="40" y1="78" x2="250" y2="78" stroke="{RED}" stroke-width="2"/>
 {''.join(rings)}'''
     svg('player-stats.svg', W, H, body, ''.join(css), 'Player statistics',
@@ -379,11 +379,11 @@ def stats_panel():
 def story():
     W, H = 1200, 344
     jobs = [('JAN 2025 — PRESENT', 'FOUNDER & FULL-STACK DEV', 'Webnify', 'Chennai, Tamil Nadu',
-             ['Full-stack apps & workflow automation', '7+ client projects, full SDLC owned'], True),
+             ['Full-stack apps & automation', '7+ client projects delivered'], True),
             ('MAR 2025 — DEC 2025', 'FULL-STACK DEVELOPER', 'VerrGroup', 'Chennai, Tamil Nadu',
-             ['Django + MySQL apps, schema to release', 'Shipped on a VPS with Gunicorn + Nginx'], False),
+             ['Django + MySQL apps to release', 'VPS deploys: Gunicorn + Nginx'], False),
             ('SEP 2025 — MAY 2026', 'BACKEND LEAD', 'Brain Mint Technologies', 'Chennai, Tamil Nadu',
-             ['Backend architecture, schema & RBAC', 'Led 35+ developers · JWT-secured APIs'], False)]
+             ['Architecture, schema & RBAC', 'Led 35+ devs · JWT REST APIs'], False)]
     ties = ''.join(f'<rect x="{x}" y="56" width="6" height="26" fill="#3A0E0E"/>' for x in range(16, 1190, 22))
     train = f'''<g class="train"><g fill="{BLOOD}">
 <rect x="0" y="40" width="70" height="22" rx="6"/><rect x="60" y="24" width="34" height="38" rx="3"/><rect x="56" y="20" width="42" height="6"/>
@@ -396,22 +396,22 @@ def story():
     cards = []
     for i, (dates, role, co, loc, bullets, live) in enumerate(jobs):
         sx = 210 + i * 390; x = sx - 180
-        fit('anton', role, 25, 320, ls=1, where='story'); fit('fell', co, 22, 320, where='story')
-        for b in bullets: fit('type', b, 13.5, 318, where='story')
-        fit('type', dates, 14, 300, ls=1, where='story')
+        fit('anton', role, 28, 320, ls=1, where='story'); fit('fell', co, 25, 320, where='story')
+        for b in bullets: fit('type', b, 16, 306, where='story')
+        fit('type', dates, 16, 300, ls=1, where='story')
         pulse = (f'<circle cx="{sx}" cy="70" r="14" fill="none" stroke="{RED}" stroke-width="2">'
                  f'<animate attributeName="r" values="14;26" dur="1.8s" repeatCount="indefinite"/>'
                  f'<animate attributeName="opacity" values=".9;0" dur="1.8s" repeatCount="indefinite"/></circle>') if live else ''
         cards.append(f'''{pulse}<circle cx="{sx}" cy="70" r="13" fill="{INK}" stroke="{RED}" stroke-width="3"/><circle cx="{sx}" cy="70" r="5" fill="{RED if live else BONE2}"/>
-{T('type', sx, 32, dates, 14, BONE2 if not live else RED, 'middle', 1)}
+{T('type', sx, 34, dates, 16, BONE2 if not live else RED, 'middle', 1)}
 <line x1="{sx}" y1="84" x2="{sx}" y2="112" stroke="{RED}" stroke-dasharray="3 3"/>
 <rect x="{x}" y="112" width="360" height="208" rx="12" fill="#140808" stroke="{MAROON2}"/>
 <rect x="{x}" y="112" width="360" height="4" rx="2" fill="{RED}"/>
-{T('anton', x+22, 154, role, 25, BONE, ls=1)}
-{T('fell', x+22, 182, co, 22, RED)}
-{T('type', x+22, 204, loc, 12.5, DUST, ls=1)}
+{T('anton', x+22, 156, role, 28, BONE, ls=1)}
+{T('fell', x+22, 186, co, 25, RED)}
+{T('type', x+22, 208, loc, 14, DUST, ls=1)}
 <line x1="{x+22}" y1="220" x2="{x+338}" y2="220" stroke="{MAROON2}"/>
-{''.join(diamond(x+27, 247+j*30-4, 4) + T('type', x+40, 247+j*30, b, 13.5, BONE2) for j, b in enumerate(bullets))}''')
+{''.join(diamond(x+27, 249+j*32-5, 4.5) + T('type', x+40, 249+j*32, b, 16, BONE2) for j, b in enumerate(bullets))}''')
     body = f'''<defs>{GRAIN}<clipPath id="c"><rect width="{W}" height="{H}" rx="18"/></clipPath></defs>
 <rect width="{W}" height="{H}" rx="18" fill="{INK}"/><rect width="{W}" height="{H}" rx="18" filter="url(#grain)"/><rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="18" fill="none" stroke="{MAROON2}"/>
 {ties}<rect x="10" y="62" width="1180" height="3" fill="#5A1414"/><rect x="10" y="74" width="1180" height="3" fill="#5A1414"/>
@@ -470,15 +470,15 @@ def scene_school():
 
 def mission(fname, title, sub, date, chips, scene, sunx, seed):
     W, H = 600, 360
-    fit('anton', title, 42, 560, ls=1, where='mission'); fit('fell', sub, 19, 560, where='mission')
+    fit('anton', title, 46, 560, ls=1, where='mission'); fit('fell', sub, 21, 560, where='mission')
     cx = 22; chip_svg = []
     for c in chips:
-        w = tw('type', c, 12.5) + 24
-        chip_svg.append(f'<rect x="{cx:.1f}" y="320" width="{w:.1f}" height="26" rx="13" fill="#1E0909" stroke="{MAROON2}"/>'
-                        f'{T("type", cx + w/2, 337.5, c, 12.5, BONE2, "middle")}')
-        cx += w + 8
+        w = tw('type', c, 15) + 20
+        chip_svg.append(f'<rect x="{cx:.1f}" y="318" width="{w:.1f}" height="30" rx="15" fill="#1E0909" stroke="{MAROON2}"/>'
+                        f'{T("type", cx + w/2, 338, c, 15, BONE2, "middle")}')
+        cx += w + 7
     if cx > 580: WARN.append(f'OVERFLOW chips {fname} {cx:.0f}')
-    dw = tw('type', date, 12.5, 1) + 26
+    dw = tw('type', date, 15, 1) + 26
     body = f'''<defs>{GRAIN}
 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A0303"/><stop offset=".55" stop-color="#7A0B0E"/><stop offset="1" stop-color="#E0392A"/></linearGradient>
 <radialGradient id="glow" cx="{sunx}" cy="190" r="320" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FF8A4C" stop-opacity=".9"/><stop offset="1" stop-color="#E3242B" stop-opacity="0"/></radialGradient>
@@ -494,11 +494,11 @@ def mission(fname, title, sub, date, chips, scene, sunx, seed):
 {scene}
 <rect y="150" width="{W}" height="92" fill="url(#fade)"/><rect y="240" width="{W}" height="{H-240}" fill="{INK}"/>
 <rect width="{W}" height="{H}" filter="url(#grain)"/>
-<rect x="18" y="18" width="{tw('type', 'MISSION COMPLETE', 13, 1) + 46:.1f}" height="30" rx="6" fill="{BLOOD}"/>{diamond(34, 33, 5, BONE)}{T('type', 46, 38, 'MISSION COMPLETE', 13, BONE, ls=1)}
+<rect x="18" y="18" width="{tw('type', 'MISSION COMPLETE', 15, 1) + 48:.1f}" height="30" rx="6" fill="{BLOOD}"/>{diamond(34, 33, 5, BONE)}{T('type', 47, 39, 'MISSION COMPLETE', 15, BONE, ls=1)}
 <rect x="{W-18-dw:.1f}" y="18" width="{dw:.1f}" height="30" rx="6" fill="#000" fill-opacity=".55" stroke="{MAROON2}"/>
-{T('type', W-18-dw/2, 38, date, 12.5, BONE2, 'middle', 1)}
-{T('anton', 22, 280, title, 42, BONE, ls=1)}
-{T('fell', 22, 308, sub, 19, RED)}
+{T('type', W-18-dw/2, 39, date, 15, BONE2, 'middle', 1)}
+{T('anton', 22, 276, title, 46, BONE, ls=1)}
+{T('fell', 22, 304, sub, 21, RED)}
 {''.join(chip_svg)}</g>
 <rect x=".5" y=".5" width="{W-1}" height="{H-1}" rx="16" fill="none" stroke="{MAROON2}"/>'''
     svg(fname, W, H, body, '', f'{title}: {sub}', f'{title}. {sub}. {date}. ' + '; '.join(chips))
@@ -517,14 +517,14 @@ def bounties():
     out = []; css = []
     for i, (rank, title, det) in enumerate(rows):
         y = 20 + i * (rh + 10)
-        fit('anton', rank, 26, 220, ls=1, where='bounty'); fit('fell', title, 23, 640, where='bounty'); fit('type', det, 13.5, 640, where='bounty')
+        fit('anton', rank, 26, 220, ls=1, where='bounty'); fit('fell', title, 23, 640, where='bounty'); fit('type', det, 16, 640, where='bounty')
         css.append(f'.s{i}{{animation-delay:{0.6+i*0.25:.2f}s}}')
         out.append(f'''<rect x="10" y="{y}" width="1180" height="{rh}" rx="10" fill="{'#140808' if i%2==0 else '#100606'}" stroke="{MAROON}"/>
 <rect x="10" y="{y}" width="4" height="{rh}" rx="2" fill="{RED}"/>
 {star(56, y+rh/2, 20)}
 {T('anton', 92, y+rh/2+10, rank, 26, RED, ls=1)}
 <line x1="320" y1="{y+16}" x2="320" y2="{y+rh-16}" stroke="{MAROON2}"/>
-{T('fell', 344, y+33, title, 23, BONE)}{T('type', 345, y+56, det, 13.5, DUST)}
+{T('fell', 344, y+33, title, 23, BONE)}{T('type', 345, y+57, det, 16, BONE2)}
 <g transform="rotate(-6 1086 {y+rh/2})"><g class="st s{i}"><rect x="1022" y="{y+rh/2-17}" width="128" height="34" rx="3" fill="none" stroke="{RED}" stroke-width="2.5"/>
 {T('rye', 1086, y+rh/2+7, 'CLAIMED', 19, RED, 'middle', 3)}</g></g>''')
     body = f'<defs>{GRAIN}</defs>' + ''.join(out)
@@ -577,7 +577,7 @@ if __name__ == '__main__':
     mission('mission-sentinel.svg', 'SENTINEL AI', 'Multi-Provider Agentic Intelligence Platform', 'JUL – AUG 2026',
             ['75K LINES', '229 ENDPOINTS', '12 OAUTH PROVIDERS', '900+ TESTS'], scene_watchtower(), 140, 4)
     mission('mission-verdict.svg', 'VERDICT', 'Pre-Deployment Code Verification Tool', 'JUL 2026',
-            ['85% PRECISION', 'DOCKER SANDBOXES', '5 PARALLEL JOBS', '0 DROPPED'], scene_courthouse(), 470, 8)
+            ['85% PRECISION', 'DOCKER SANDBOX', '5 PARALLEL JOBS', '0 DROPPED'], scene_courthouse(), 470, 8)
     mission('mission-growthos.svg', 'GROWTHOS', 'AI-Powered Learning Platform · growth-os.tech', 'JUN 2026',
             ['LIVE', 'LLM SKILL-GAP MAPPING', 'SM-2 REPETITION', '5 CONTAINERS'], scene_windmill(), 150, 12)
     mission('mission-school.svg', 'SCHOOL ERP', 'Full-Stack School Management System', 'MAR – DEC 2025',

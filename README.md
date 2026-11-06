@@ -59,7 +59,6 @@
 
 <sub><b>SIDEARMS · LANGUAGES</b></sub><br/>
 <img src="https://cdn.simpleicons.org/python/E3242B" height="32" alt="Python" title="Python" />&nbsp;
-<img src="https://cdn.simpleicons.org/mysql/E3242B" height="32" alt="SQL" title="SQL" />&nbsp;
 <img src="https://cdn.simpleicons.org/javascript/E3242B" height="32" alt="JavaScript" title="JavaScript" />&nbsp;
 <img src="https://cdn.simpleicons.org/typescript/E3242B" height="32" alt="TypeScript" title="TypeScript" />&nbsp;
 <img src="https://cdn.simpleicons.org/cplusplus/E3242B" height="32" alt="C++" title="C++" />&nbsp;
@@ -179,8 +178,6 @@ School ERP in **Django + MySQL** with portals for admins, teachers, students and
 </table>
 
 <div align="center"><img src="./assets/top-langs.svg" alt="Top languages" /></div>
-
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=anxmeshhh&bg_color=0A0606&color=F1E4CF&line=E3242B&point=FF5A36&area=true&area_color=B3121B&title_color=F1E4CF&hide_border=true&custom_title=Rides%20logged%20this%20season" alt="Contribution activity graph" />
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/anxmeshhh/anxmeshhh/output/github-contribution-grid-snake-dark.svg" />
